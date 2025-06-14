@@ -1,10 +1,10 @@
+use serde::{Deserialize, Serialize};
 use std::fmt;
-use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 struct TodoListQuest {
     description: String,
-    finished: bool
+    finished: bool,
 }
 
 impl fmt::Display for TodoListQuest {
@@ -14,20 +14,18 @@ impl fmt::Display for TodoListQuest {
 }
 
 impl TodoListQuest {
-    pub fn new(description: String) -> Self
-    {
-        TodoListQuest {description, finished: false}
+    pub fn new(description: String) -> Self {
+        TodoListQuest {
+            description,
+            finished: false,
+        }
     }
-    
-    
-    
-    pub fn finish_quest(&mut self) 
-    {
+
+    pub fn finish_quest(&mut self) {
         self.finished = true;
-    } 
-    
-    pub fn is_finished(&self) -> bool
-    {
+    }
+
+    pub fn is_finished(&self) -> bool {
         self.finished
     }
 }
