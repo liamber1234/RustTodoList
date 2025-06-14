@@ -1,8 +1,8 @@
-use serde::{Deserialize, Serialize};
 use std::fmt;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
-struct TodoListQuest {
+pub struct TodoListQuest {
     description: String,
     finished: bool,
 }
